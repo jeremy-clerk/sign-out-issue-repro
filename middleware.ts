@@ -2,13 +2,7 @@ import {clerkMiddleware, createRouteMatcher} from "@clerk/nextjs/server";
 
 const isPublicRoute = createRouteMatcher(["/unprotected(.*)"])
 
-const isRewritePath = createRouteMatcher(["/clerk_(.*)"])
-
 export  default clerkMiddleware(async (auth, request)=> {
-  if(isRewritePath(request)) {
-    console.log('Rewrite triggered - request.nextUrl.origin: ', request.nextUrl.origin);
-    console.log('Rewrite triggered - request.headers origin:', request.headers.get('origin'));
-  }
   if(!isPublicRoute(request)) await auth.protect();
 });
 

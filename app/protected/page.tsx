@@ -1,4 +1,4 @@
-import {UserButton} from "@clerk/nextjs";
+import {SignOutButton, UserButton} from "@clerk/nextjs";
 
 
 export default async function ProtectedPage(){
@@ -6,6 +6,7 @@ export default async function ProtectedPage(){
         <div className={"flex items-center justify-center flex-col h-1/2"}>
             <p>Protected Route</p>
             <div className={"h-10"}><UserButton /></div>
+            <SignOutButton />
         </div>
     )
 }
