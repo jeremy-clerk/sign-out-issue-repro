@@ -10,7 +10,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider afterSignOutUrl={"/"}>
+    <ClerkProvider>
       <html lang="en" className={"h-dvh w-dvw"}>
         <body className={"h-full flex-col flex"}>
           <header className={"flex gap-4 p-6"}>
